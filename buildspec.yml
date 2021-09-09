@@ -1,0 +1,20 @@
+version: 0.2 #versao do arquivo
+
+phases: #fases do processo de build
+  install: #antes do build rodar instaleremos o java e o docker por conta dos tests
+    runtime-version:
+      java: crretto11 #implementacao do jdk da amazon
+      docker: 19
+  build: #lista de comandos
+    comands:
+      - echo Build started on `date` #info que iniciou o build
+      - mvn clean package #executa o clean e constrói o jar com o package (passando por testes)
+
+artifacts:
+  files: #esse é o arquivo usado pelo prox passo de instalacao
+    - service/target/*.jar
+  discard-paths: yes
+
+cache: #o codebuild vai fazer um cache para dentro do S3 para agilizar os builds após o primeiro
+  paths:
+    - '/root/.m2/**/*'
