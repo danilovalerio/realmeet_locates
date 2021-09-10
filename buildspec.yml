@@ -6,12 +6,12 @@ phases: #fases do processo de build
       java: crretto11 #implementacao do jdk da amazon
       docker: 19
   build: #lista de comandos
-    comands:
+    commands:
       - echo Build started on `date` #info que iniciou o build
       - mvn clean package #executa o clean e constrói o jar com o package (passando por testes)
-
+#esse é o arquivo usado pelo prox passo de instalacao
 artifacts:
-  files: #esse é o arquivo usado pelo prox passo de instalacao
+  files:
     - service/target/*.jar
   discard-paths: yes
 
