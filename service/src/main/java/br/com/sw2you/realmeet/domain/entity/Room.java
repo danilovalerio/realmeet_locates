@@ -1,6 +1,9 @@
 package br.com.sw2you.realmeet.domain.entity;
 
+import static java.util.Objects.isNull;
+
 import java.util.Objects;
+import javax.persistence.*;
 
 /**
  * Classe que representa a sala
@@ -9,14 +12,23 @@ import java.util.Objects;
  * - criando somente gets
  * - construtor privado
  */
+
+@Entity
+@Table(name = "room")
 public class Room {
+    @Id
     private Long id;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "seats", nullable = false)
     private Integer seats; //número de assentos
+
+    @Column(name = "active", nullable = false)
     private Boolean active;
 
-    public Room() {
-    } //a jpa precisa de um construtor publico
+    public Room() {} //a jpa precisa de um construtor publico
 
     private Room(Long id, String name, Integer seats, Boolean active) {
         this.id = id;
@@ -25,7 +37,13 @@ public class Room {
         this.active = active;
     }
 
+    @PrePersist
+    public void prePersist() {
+        if(isNull(active)) {
+            active = true;
+        }
 
+    }
 
     public Long getId() {
         return id;
