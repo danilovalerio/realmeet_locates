@@ -40,10 +40,9 @@ public class Room {
 
     @PrePersist
     public void prePersist() {
-        if(isNull(active)) {
+        if (isNull(active)) {
             active = true;
         }
-
     }
 
     public Long getId() {
@@ -68,10 +67,10 @@ public class Room {
         if (o == null || getClass() != o.getClass()) return false;
         Room room = (Room) o;
         return (
-                Objects.equals(id, room.id) &&
-                        Objects.equals(name, room.name) &&
-                        Objects.equals(seats, room.seats) &&
-                        Objects.equals(active, room.active)
+            Objects.equals(id, room.id) &&
+            Objects.equals(name, room.name) &&
+            Objects.equals(seats, room.seats) &&
+            Objects.equals(active, room.active)
         );
     }
 
@@ -82,18 +81,7 @@ public class Room {
 
     @Override
     public String toString() {
-        return (
-                "Room{" +
-                        "id=" +
-                        id +
-                        ", name='" +
-                        name + '\'' +
-                        ", seats=" +
-                        seats +
-                        ", active=" +
-                        active +
-                        '}'
-        );
+        return ("Room{" + "id=" + id + ", name='" + name + '\'' + ", seats=" + seats + ", active=" + active + '}');
     }
 
     public static Builder newBuilder() {
