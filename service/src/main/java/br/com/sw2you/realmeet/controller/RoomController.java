@@ -19,14 +19,14 @@ public class RoomController implements RoomsApi {
     private final Executor controllersExecutor;
     private final RoomService roomService;
 
-    public RoomController(Executor executor, RoomService roomService) {
-        this.controllersExecutor = executor;
+    public RoomController(Executor controllersExecutor, RoomService roomService) {
+        this.controllersExecutor = controllersExecutor;
         this.roomService = roomService;
     }
 
     @Override
     public CompletableFuture<ResponseEntity<RoomDTO>> getRoom(Long id) {
-//        return supplyAsync(() -> ResponseEntity.ok(roomService.getRoom(id)));
+        //return supplyAsync(() -> ResponseEntity.ok(roomService.getRoom(id)));
         return supplyAsync(() -> roomService.getRoom(id), controllersExecutor).thenApply(ResponseEntityUtils::ok);
     }
 }

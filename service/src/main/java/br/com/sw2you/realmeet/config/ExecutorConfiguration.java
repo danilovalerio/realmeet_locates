@@ -12,20 +12,21 @@ import org.springframework.context.annotation.Configuration;
 public class ExecutorConfiguration {
 
     @Bean
-    public Executor constrollerExecutor(
-            @Value("${realmeet.taskExecutor.pool.coreSize:20}") int corePoolSize,
-            @Value("${realmeet.taskExecutor.pool.maxSize:20}") int maxPoolSize,
-            @Value("${realmeet.taskExecutor.pool.queueCapacity:50}") int queueCapacity,
-            @Value("${realmeet.taskExecutor.pool.keepAliveSeconds:60}") int keepAliveSeconds) {
+    public Executor controllersExecutor(
+        @Value("${realmeet.taskExecutor.pool.coreSize:20}") int corePoolSize,
+        @Value("${realmeet.taskExecutor.pool.maxSize:20}") int maxPoolSize,
+        @Value("${realmeet.taskExecutor.pool.queueCapacity:50}") int queueCapacity,
+        @Value("${realmeet.taskExecutor.pool.keepAliveSeconds:60}") int keepAliveSeconds
+    ) {
         /**
          * Retorna o pool de threads
          */
         return new ThreadPoolExecutor(
-                corePoolSize, //tamanho base do Pool
-                maxPoolSize, //max de threads no Pool
-                keepAliveSeconds, //timeout para thread
-                TimeUnit.SECONDS,
-                new ArrayBlockingQueue<>(queueCapacity, true) //fila baseada em array e é bloqueante, fair true distribuicao no uso da fila
+            corePoolSize, //tamanho base do Pool
+            maxPoolSize, //max de threads no Pool
+            keepAliveSeconds, //timeout para thread
+            TimeUnit.SECONDS,
+            new ArrayBlockingQueue<>(queueCapacity, true) //fila baseada em array e é bloqueante, fair true distribuicao no uso da fila
         );
     }
 }

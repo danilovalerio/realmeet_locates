@@ -6,7 +6,9 @@ import br.com.sw2you.realmeet.domain.repository.RoomRepository;
 import br.com.sw2you.realmeet.exception.RoomNotFoundException;
 import br.com.sw2you.realmeet.mapper.RoomMapper;
 import java.util.Objects;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RoomService {
     private final RoomRepository roomRepository; //Definir como final para evitar reatribuição por algum motivo
     private final RoomMapper roomMapper;
