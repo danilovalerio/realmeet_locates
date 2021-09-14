@@ -23,7 +23,7 @@ public class RoomService {
         /**
          * Caso exista sala retorna, caso não retorna uma Exception
          */
-        Room room = roomRepository.findById(id).orElseThrow(RoomNotFoundException::new);
+        Room room = roomRepository.findById(id).orElseThrow(() -> new RoomNotFoundException("Room not found:"+id));
         /**
          * Forma manual para fazer o mapper
          * //return new RoomDTO().name(room.getName()).id(room.getId()).seats(room.getSeats());
