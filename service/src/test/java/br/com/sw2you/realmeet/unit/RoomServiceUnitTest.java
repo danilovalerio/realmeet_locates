@@ -3,6 +3,7 @@ package br.com.sw2you.realmeet.unit;
 import static br.com.sw2you.realmeet.utils.MapperUtils.roomMapper;
 import static br.com.sw2you.realmeet.utils.TestConstants.DEFAULT_ROOM_ID;
 
+import br.com.sw2you.realmeet.core.BaseUnitTest;
 import br.com.sw2you.realmeet.domain.repository.RoomRepository;
 import br.com.sw2you.realmeet.service.RoomService;
 import br.com.sw2you.realmeet.utils.TestDataCreator;
@@ -11,16 +12,10 @@ import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 
-/**
- * Aqui adiciona suporte do Junit ao Mockito
- */
-@ExtendWith(MockitoExtension.class)
-class RoomServiceUnitTest {
+class RoomServiceUnitTest extends BaseUnitTest {
 
     private RoomService victim;
 
