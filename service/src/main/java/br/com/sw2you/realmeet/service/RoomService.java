@@ -20,13 +20,13 @@ public class RoomService {
 
     public RoomDTO getRoom(Long id) {
         Objects.requireNonNull(id);
-        /**
-         * Caso exista sala retorna, caso não retorna uma Exception
+        /*
+          Caso exista sala retorna, caso não retorna uma Exception
          */
         Room room = roomRepository.findById(id).orElseThrow(() -> new RoomNotFoundException("Room not found:"+id));
-        /**
-         * Forma manual para fazer o mapper
-         * //return new RoomDTO().name(room.getName()).id(room.getId()).seats(room.getSeats());
+        /*
+          Forma manual para fazer o mapper
+          //return new RoomDTO().name(room.getName()).id(room.getId()).seats(room.getSeats());
          */
         return roomMapper.fromEntityToDto(room); //gera uma RoomMapperImpl
     }
