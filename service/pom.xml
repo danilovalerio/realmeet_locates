@@ -73,6 +73,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- toda vez que rolar os testes de integracao cria novo banco de dados -->
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -147,26 +148,26 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.hubspot.maven.plugins</groupId>
-                <artifactId>prettier-maven-plugin</artifactId>
-                <version>${prettier-maven-plugin.version}</version>
-                <configuration>
-                    <printWidth>120</printWidth>
-                    <tabWidth>4</tabWidth>
-                    <prettierJavaVersion>0.7.1</prettierJavaVersion>
-                    <generateDiff>true</generateDiff>
-                    <fail>true</fail>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.hubspot.maven.plugins</groupId>-->
+<!--                <artifactId>prettier-maven-plugin</artifactId>-->
+<!--                <version>${prettier-maven-plugin.version}</version>-->
+<!--                <configuration>-->
+<!--                    <printWidth>120</printWidth>-->
+<!--                    <tabWidth>4</tabWidth>-->
+<!--                    <prettierJavaVersion>0.7.1</prettierJavaVersion>-->
+<!--                    <generateDiff>true</generateDiff>-->
+<!--                    <fail>true</fail>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>compile</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>

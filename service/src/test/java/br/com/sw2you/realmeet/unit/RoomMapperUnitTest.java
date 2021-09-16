@@ -6,17 +6,15 @@ import br.com.sw2you.realmeet.core.BaseUnitTest;
 import br.com.sw2you.realmeet.mapper.RoomMapper;
 import br.com.sw2you.realmeet.utils.MapperUtils;
 import br.com.sw2you.realmeet.utils.TestDataCreator;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class RoomMapperUnitTest extends BaseUnitTest {
-
     private RoomMapper victim;
 
     @BeforeEach
-    void setupEach(){
+    void setupEach() {
         victim = MapperUtils.roomMapper();
     }
 

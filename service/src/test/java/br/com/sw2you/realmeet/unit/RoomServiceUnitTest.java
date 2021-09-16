@@ -7,23 +7,21 @@ import br.com.sw2you.realmeet.core.BaseUnitTest;
 import br.com.sw2you.realmeet.domain.repository.RoomRepository;
 import br.com.sw2you.realmeet.service.RoomService;
 import br.com.sw2you.realmeet.utils.TestDataCreator;
-import java.util.Optional;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import java.util.Optional;
 
 class RoomServiceUnitTest extends BaseUnitTest {
-
     private RoomService victim;
 
     @Mock
     private RoomRepository roomRepository;
 
     @BeforeEach
-    void setupEach(){
+    void setupEach() {
         victim = new RoomService(roomRepository, roomMapper());
     }
 
