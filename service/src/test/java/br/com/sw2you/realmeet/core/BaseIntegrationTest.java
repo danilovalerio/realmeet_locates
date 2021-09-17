@@ -32,9 +32,9 @@ public abstract class BaseIntegrationTest {
 
     protected void setupEach() {}
 
-    //    protected void setLocalHostBasePath(OpenAPI apiClient, String path) throws MalformedURLException {
-    //        apiClient.setBasePath(new URL("http", "localhost", serverPort, path).toString());
-    //    }
+//    protected void setLocalHostBasePath(ApiClient apiClient, String path) throws MalformedURLException {
+//        apiClient.setBasePath(new URL("http", "localhost", serverPort, path).toString());
+//    }
 
     private void setupFlyway() {
         flyway.clean();
