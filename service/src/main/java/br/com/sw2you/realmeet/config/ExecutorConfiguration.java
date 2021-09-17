@@ -13,9 +13,9 @@ public class ExecutorConfiguration {
 
     @Bean
     public Executor controllersExecutor(
-        @Value("${realmeet.taskExecutor.pool.coreSize:20}") int corePoolSize,
-        @Value("${realmeet.taskExecutor.pool.maxSize:20}") int maxPoolSize,
-        @Value("${realmeet.taskExecutor.pool.queueCapacity:50}") int queueCapacity,
+        @Value("${realmeet.taskExecutor.pool.coreSize:2}") int corePoolSize,
+        @Value("${realmeet.taskExecutor.pool.maxSize:2}") int maxPoolSize,
+        @Value("${realmeet.taskExecutor.pool.queueCapacity:3}") int queueCapacity,
         @Value("${realmeet.taskExecutor.pool.keepAliveSeconds:600000}") int keepAliveSeconds
     ) {
         /**
